@@ -371,7 +371,7 @@ getCorR <- function(GCMat,keys,cells)
   
   rownames(cor_df) <- key_df$key
   colnames(cor_df) <- c("R","pval")
-  cor_df <- cor_df[cor_df[,2] < 0.05,]
+  cor_df <- cor_df[ cor_df[,1] > 0 &  cor_df[,2] < 0.05,]
   
   return(rownames(cor_df))
   
